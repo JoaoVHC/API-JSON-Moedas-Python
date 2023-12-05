@@ -7,7 +7,32 @@
 </head>
 <body>
     <h1>Cotações</h1>
-    <p>Cotação do Peso Chileno para Real é: {{ clp_bid }}</p>
-    <p>Cotação do Dólar para Real é: {{ usd_bid }}</p>
+    <p id="clpBid">Cotação do Peso Chileno para Real é: </p>
+    <p id="usdBid">Cotação do Dólar para Real é: </p>
+
+    <script>
+        // Função para buscar dados da API usando fetch
+        function fetchData(url, callback) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => callback(data))
+                .catch(error => console.error('Erro ao obter dados da API:', error));
+        }
+
+        // Substitua 'SUA_URL_DA_API' pela URL real da sua API
+        const apiUrl = 'https://economia.awesomeapi.com.br/last/USD-BRL,CLP-BRL';
+
+        // Função para atualizar os valores na página
+        function updateValues(data) {
+            var clpBidValue = data.USDBRL.bid;  // Chave correta para a cotação CLP
+            var usdBidValue = data.CLPBRL.bid;  // Chave correta para a cotação USD
+
+            document.getElementById("clpBid").innerHTML += clpBidValue;
+            document.getElementById("usdBid").innerHTML += usdBidValue;
+        }
+
+        // Chama a função fetchData para buscar dados da API e atualizar a página
+        fetchData(apiUrl, updateValues);
+    </script>
 </body>
 </html>
