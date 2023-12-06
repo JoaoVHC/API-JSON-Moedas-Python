@@ -27,8 +27,16 @@
         }
 
         .currency-input {
-            padding-left: 30px;
             margin-left: 10px;
+        }
+
+        /* Ajuste o padding-left para cada caixa de pesquisa conforme necessário */
+        .currency-input.clp {
+            padding-left: 50px; /* Espaço à esquerda para o símbolo */
+        }
+
+        .currency-input.usd {
+            padding-left: 15px; /* Outro valor de espaço à esquerda para o símbolo */
         }
     </style>
 </head>
@@ -41,7 +49,7 @@
         <label for="cotacaoCLP">Faça a conversão:</label>
         <div class="input-container">
             <span class="currency-symbol">CLP$</span>
-            <input type="text" id="cotacaoCLP" name="cotacaoCLP" class="currency-input" required="">
+            <input type="text" id="cotacaoCLP" name="cotacaoCLP" class="currency-input clp" required="">
         </div>
         <div class="input-container">
             <span class="currency-symbol">R$</span>
@@ -54,13 +62,15 @@
         <label for="cotacaoUSD">Faça a conversão:</label>
         <div class="input-container">
             <span class="currency-symbol">$</span>
-            <input type="text" id="cotacaoUSD" name="cotacaoUSD" class="currency-input" required="">
+            <input type="text" id="cotacaoUSD" name="cotacaoUSD" class="currency-input usd" required="">
         </div>
         <div class="input-container">
             <span class="currency-symbol">R$</span>
             <input type="text" id="resultadoUSD" name="resultadoUSD" class="currency-input" readonly>
         </div>
     </div>
+
+    <!-- Adicione quantas caixas de pesquisa você precisar aqui -->
 
     <script>
         // Função para buscar dados da API usando fetch
