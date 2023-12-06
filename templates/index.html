@@ -36,7 +36,12 @@
         }
 
         .currency-input.usd {
-            padding-left: 15px; /* Outro valor de espaço à esquerda para o símbolo */
+            padding-left: 15px;
+        }
+
+        .currency-input.real {
+            /* Ajuste o padding-left conforme necessário para cada caixa com o símbolo "R$" */
+            padding-left: 20px;
         }
     </style>
 </head>
@@ -53,7 +58,7 @@
         </div>
         <div class="input-container">
             <span class="currency-symbol">R$</span>
-            <input type="text" id="resultadoCLP" name="resultadoCLP" class="currency-input" readonly>
+            <input type="text" id="resultadoCLP" name="resultadoCLP" class="currency-input real" readonly>
         </div>
     </div>
 
@@ -66,7 +71,7 @@
         </div>
         <div class="input-container">
             <span class="currency-symbol">R$</span>
-            <input type="text" id="resultadoUSD" name="resultadoUSD" class="currency-input" readonly>
+            <input type="text" id="resultadoUSD" name="resultadoUSD" class="currency-input real" readonly>
         </div>
     </div>
 
