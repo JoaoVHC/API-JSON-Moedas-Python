@@ -3,12 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem vindo a cotação em tempo real de moedas</title>
+    <title>Bem-vindo à cotação em tempo real de moedas</title>
+    <style>            
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 60px;
+        }
+
+        .input-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .currency-symbol {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            pointer-events: none; /* Impede que o símbolo seja clicável */
+        }
+
+        .currency-input {
+            padding-left: 30px;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bem vindo a cotação em tempo real de moedas</h1>
-    <p id="clpBid">Cotação do Peso Chileno para Real é: </p>
-    <p id="usdBid">Cotação do Dólar para Real é: </p>
+    <h1>Bem-vindo à cotação em tempo real de moedas</h1>
+
+    <p id="clpBid">Cotação de 1 Peso Chileno para Real é: R$</p> 
+    <label for="cotacaoCLP">Faça a conversão:</label> 
+    <div class="input-container">
+        <span class="currency-symbol">R$</span>
+        <input type="text" id="cotacaoCLP" name="cotacaoCLP" class="currency-input" required="">
+    </div>
+
+    <p id="usdBid">Cotação de 1 Dólar para Real é: R$</p> 
+    <label for="cotacaoUSD">Faça a conversão:</label>
+    <div class="input-container">
+        <span class="currency-symbol">R$</span>
+        <input type="text" id="cotacaoUSD" name="cotacaoUSD" class="currency-input" required="">
+    </div>
 
     <script>
         // Função para buscar dados da API usando fetch
