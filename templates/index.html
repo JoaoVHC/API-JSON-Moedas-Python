@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-vindo à cotação em tempo real de moedas</title>
-    <style>            
+    <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -31,21 +32,34 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Bem-vindo à cotação em tempo real de moedas</h1>
 
-    <p id="clpBid">Cotação de 1 Peso Chileno para Real é: R$</p> 
-    <label for="cotacaoCLP">Faça a conversão:</label> 
-    <div class="input-container">
-        <span class="currency-symbol">R$</span>
-        <input type="text" id="cotacaoCLP" name="cotacaoCLP" class="currency-input" required="">
+    <div>
+        <p id="clpBid">Cotação de 1 Peso Chileno para Real é: R$</p>
+        <label for="cotacaoCLP">Faça a conversão:</label>
+        <div class="input-container">
+            <span class="currency-symbol">CLP$</span>
+            <input type="text" id="cotacaoCLP" name="cotacaoCLP" class="currency-input" required="">
+        </div>
+        <div class="input-container">
+            <span class="currency-symbol">R$</span>
+            <input type="text" id="resultadoCLP" name="resultadoCLP" class="currency-input" readonly>
+        </div>
     </div>
 
-    <p id="usdBid">Cotação de 1 Dólar para Real é: R$</p> 
-    <label for="cotacaoUSD">Faça a conversão:</label>
-    <div class="input-container">
-        <span class="currency-symbol">R$</span>
-        <input type="text" id="cotacaoUSD" name="cotacaoUSD" class="currency-input" required="">
+    <div>
+        <p id="usdBid">Cotação de 1 Dólar para Real é: R$</p>
+        <label for="cotacaoUSD">Faça a conversão:</label>
+        <div class="input-container">
+            <span class="currency-symbol">$</span>
+            <input type="text" id="cotacaoUSD" name="cotacaoUSD" class="currency-input" required="">
+        </div>
+        <div class="input-container">
+            <span class="currency-symbol">R$</span>
+            <input type="text" id="resultadoUSD" name="resultadoUSD" class="currency-input" readonly>
+        </div>
     </div>
 
     <script>
@@ -73,4 +87,5 @@
         fetchData(apiUrl, updateValues);
     </script>
 </body>
+
 </html>
