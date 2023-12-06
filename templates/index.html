@@ -94,8 +94,8 @@
             var clpBidValue = data.CLPBRL.bid;  // Chave correta para a cotação CLP
             var usdBidValue = data.USDBRL.bid;  // Chave correta para a cotação USD
 
-            document.getElementById("clpBid").innerHTML += clpBidValue;
-            document.getElementById("usdBid").innerHTML += usdBidValue;
+            document.getElementById("clpBid").innerHTML += "<strong>" + clpBidValue + "<strong>";
+            document.getElementById("usdBid").innerHTML += "<strong>" + usdBidValue + "<strong>";
 
             // Adiciona um ouvinte de evento para a caixa de pesquisa CLP
             document.getElementById("cotacaoCLP").addEventListener("input", function () {
