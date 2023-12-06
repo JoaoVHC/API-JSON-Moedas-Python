@@ -41,7 +41,7 @@
 
         .currency-input.real {
             /* Ajuste o padding-left conforme necessário para cada caixa com o símbolo "R$" */
-            padding-left: 20px;
+            padding-left: 25px;
         }
     </style>
 </head>
@@ -96,6 +96,26 @@
 
             document.getElementById("clpBid").innerHTML += clpBidValue;
             document.getElementById("usdBid").innerHTML += usdBidValue;
+
+            // Adiciona um ouvinte de evento para a caixa de pesquisa CLP
+            document.getElementById("cotacaoCLP").addEventListener("input", function () {
+                // Converte o valor digitado para número e calcula o resultado
+                var inputValue = parseFloat(this.value);
+                var resultado = inputValue * clpBidValue;
+
+                // Exibe o resultado na caixa de diálogo correspondente
+                document.getElementById("resultadoCLP").value = resultado.toFixed(2);
+            });
+
+            // Adiciona um ouvinte de evento para a caixa de pesquisa USD
+            document.getElementById("cotacaoUSD").addEventListener("input", function () {
+                // Converte o valor digitado para número e calcula o resultado
+                var inputValue = parseFloat(this.value);
+                var resultado = inputValue * usdBidValue;
+
+                // Exibe o resultado na caixa de diálogo correspondente
+                document.getElementById("resultadoUSD").value = resultado.toFixed(2);
+            });
         }
 
         // Chama a função fetchData para buscar dados da API e atualizar a página
