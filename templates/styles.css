@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 60px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+.input-container {
+    display: inline-block;
+    position: relative;
+}
+
+.currency-symbol {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    pointer-events: none;
+}
+
+.currency-input {
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 1em;
+}
+
+.currency-input.real {
+    padding-left: 20px;
+}
+
+button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
